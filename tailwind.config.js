@@ -14,6 +14,8 @@ module.exports = {
         manrope: ['Manrope', 'sans-serif'],
         playfair: ['"Playfair Display"', 'serif'],
         poppins:['Poppins', 'sans-serif'],
+        dm: ["'DM Sans'", "sans-serif"],
+        
 
       },
       color:{

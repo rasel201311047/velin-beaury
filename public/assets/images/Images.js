@@ -16,7 +16,7 @@ export const Images = {
     option12: require('./option12.png'),
     option13: require('./option13.png'),
     option14: require('./option14.png'),
-    option15: require('./option15.jpg'),
+    option15: require('./option15.png'),
     option16: require('./option16.png'),
     option17: require('./option17.png'),
     option18: require('./option18.png'),

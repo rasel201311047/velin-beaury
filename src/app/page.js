@@ -2,6 +2,11 @@
 import Navbar from "@/components/Navbar";
 import Heropage from "@/components/Heropage";
 import OurServices from "@/components/OurServices";
+import OurWork from "@/components/OurWork";
+import ComingSoon from "@/components/ComingSoon";
+import Platfrom from "@/components/Platfrom";
+import ContractUs from "@/components/ContractUs";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -9,6 +14,11 @@ export default function Home() {
       <Navbar/>
       <Heropage/>
       <OurServices/>
+      <OurWork/>
+      <ComingSoon/>
+      <Platfrom/>
+      <ContractUs/>
+      <Footer/>
     </div>
   );
 }

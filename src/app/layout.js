@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono,Manrope,Playfair_Display,Poppins} from "next/font/google";
+import { Geist, Geist_Mono,Manrope,Playfair_Display,Poppins,DM_Sans} from "next/font/google";
 import "../../global.css";
 
 const geistSans = Geist({
@@ -11,7 +11,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 const playfair = Playfair_Display({
-  weight: ['500', '700'], // choose weights you need
+  weight: ['500', '700'], 
   subsets: ['latin'],
   display: 'swap',
 });
@@ -21,8 +21,9 @@ const manrope = Manrope({
 });
 const poppins = Poppins({
   weight: '500',
-  subsets: ['latin'], // adjust if needed
+  subsets: ['latin'], 
 });
+const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400","700"] });
 
 export const metadata = {
   title: "Create Next App",
