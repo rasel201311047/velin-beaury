@@ -1,5 +1,5 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Geist, Geist_Mono,Manrope,Playfair_Display,Poppins} from "next/font/google";
+import "../../global.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -9,6 +9,19 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+const playfair = Playfair_Display({
+  weight: ['500', '700'], // choose weights you need
+  subsets: ['latin'],
+  display: 'swap',
+});
+const manrope = Manrope({
+  weight: '500',
+  subsets: ['latin'],
+});
+const poppins = Poppins({
+  weight: '500',
+  subsets: ['latin'], // adjust if needed
 });
 
 export const metadata = {
