@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono,Manrope,Playfair_Display,Poppins,DM_Sans} from "next/font/google";
+import { Geist, Geist_Mono,Manrope,Playfair_Display,Poppins,DM_Sans,Roboto} from "next/font/google";
 import "../../global.css";
 
 const geistSans = Geist({
@@ -15,6 +15,12 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
 });
+const roboto = Roboto({
+  weight: ['500', '700'], 
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 const manrope = Manrope({
   weight: '500',
   subsets: ['latin'],

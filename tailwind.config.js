@@ -15,6 +15,7 @@ module.exports = {
         playfair: ['"Playfair Display"', 'serif'],
         poppins:['Poppins', 'sans-serif'],
         dm: ["'DM Sans'", "sans-serif"],
+        roboto:["Roboto", "sans-serif"],
         
 
       },

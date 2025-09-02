@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import { Images } from '../../public/assets/images/Images'
 import Image from 'next/image'
@@ -25,7 +26,7 @@ export default function OurServices() {
         { image: Images.option14, title: 'Aurora' },
     ]
     return (
-        <div className='bg-gradient-to-br from-[#FBFAF7] to-[#F3EFE7] w-full py-8'>
+        <div className='bg-gradient-to-br from-[#FBFAF7] to-[#F3EFE7] w-full py-8 px-4'>
             <h6 className='text-center mb-6 font-manrope text-base text-[#2C2C2A]'>OUR SERVICES</h6>
             <div className="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-1 sm:gap-2 md:gap-4 lg:gap-6 justify-items-center">
                 {servicesData.map((service, index) => (

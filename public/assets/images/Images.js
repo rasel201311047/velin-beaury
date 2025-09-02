@@ -23,5 +23,6 @@ export const Images = {
     option19: require('./option19.png'),
     option20: require('./option20.png'),
     option21: require('./option21.png'),
-    option22: require('./option22.png')
+    option22: require('./option22.png'),
+    thank:require('./thanks.gif'),
 }

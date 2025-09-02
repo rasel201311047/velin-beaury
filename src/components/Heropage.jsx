@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image'
 import React from 'react'
-import { Images } from '../../public/assets/images/Images'
+import { Images } from '../../public/assets/images/Images';
 
 export default function Heropage() {
   return (

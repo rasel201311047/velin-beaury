@@ -56,7 +56,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-black w-full py-2 md:py-4 border-b border-gray-800">
+    <div className="bg-black w-full py-2 md:py-4 border-b border-gray-800">
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/*---------- Logo */}
         <Link href="/" className="flex items-center">
@@ -105,10 +105,10 @@ export default function Navbar() {
 
           {/* Auth Buttons */}
           <div className="flex items-center space-x-3">
-            <Link href="/" className="text-lg border font-manrope border-[#FFFFFF] text-[#FFFFFF] px-4 py-2 rounded-md hover:bg-gray-800 transition-colors" >
+            <Link href="/signin" className="text-lg border font-manrope border-[#FFFFFF] text-[#FFFFFF] px-4 py-2 rounded-md hover:bg-gray-800 transition-colors" >
               Sign in
             </Link>
-            <Link href="/" className="text-lg bg-[#FFFFFF] font-manrope text-black px-4 py-2 rounded-md hover:bg-gray-100 transition-colors font-medium" >
+            <Link href="/signup" className="text-lg bg-[#FFFFFF] font-manrope text-black px-4 py-2 rounded-md hover:bg-gray-100 transition-colors font-medium" >
               Sign up
             </Link>
           </div>
@@ -167,10 +167,10 @@ export default function Navbar() {
               
               {/* Mobile Auth Buttons */}
               <div className="flex flex-col space-y-3 pt-2">
-                <Link href="/" className="text-lg border text-center font-manrope border-[#FFFFFF] text-[#FFFFFF] px-4 py-2 rounded-md hover:bg-gray-800 transition-colors" >
+                <Link href="/signin" className="text-lg border text-center font-manrope border-[#FFFFFF] text-[#FFFFFF] px-4 py-2 rounded-md hover:bg-gray-800 transition-colors" >
                   Sign in
                 </Link>
-                <Link href="/" className="text-lg bg-[#FFFFFF] text-center font-manrope text-black px-4 py-2 rounded-md hover:bg-gray-100 transition-colors font-medium" >
+                <Link href="/signup" className="text-lg bg-[#FFFFFF] text-center font-manrope text-black px-4 py-2 rounded-md hover:bg-gray-100 transition-colors font-medium" >
                   Sign up
                 </Link>
               </div>
@@ -178,6 +178,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+    </div>
   );
 }
