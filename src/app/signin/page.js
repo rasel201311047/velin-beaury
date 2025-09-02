@@ -62,7 +62,7 @@ export default function page() {
                         </button>
                         <div className='flex justify-center items-center gap-2'>
                             <p className='font-roboto font-normal text-[#222122] text-sm'> Don&apos;t have an account?</p>
-                            <Link href={'/'}><p className='font-roboto font-semibold text-sm text-black underline'>Sign up</p></Link>
+                            <Link href={'/signup'}><p className='font-roboto font-semibold text-sm text-black underline'>Sign up</p></Link>
                         </div>
                     </form>
 

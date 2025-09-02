@@ -3,9 +3,14 @@ import Footer from '@/components/Footer'
 import Image from 'next/image'
 import React from 'react'
 import { Images } from '../../../public/assets/images/Images'
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
 
 export default function page() {
+    const router=useRouter();
+    const handlesend=()=>{
+        router.push('/forgotpassword/verify')
+    }
     return (
         <div className=' bg-[#F4F0E9] w-full'>
             <div className='w-full  h-screen flex items-center justify-center'>
@@ -42,9 +47,10 @@ export default function page() {
                             <input type="email" name="email" placeholder="example@gmail.com" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
 
 
-                            <button type="submit" className="w-full bg-black text-white py-2 text-base font-roboto font-medium rounded-md hover:bg-gray-800 transition mt-8 mb-2" >
+                            <button onClick={handlesend} type="submit" className="w-full bg-black text-white py-2 text-base font-roboto font-medium rounded-md hover:bg-gray-800 transition mt-8 mb-2" >
                                 Send
                             </button>
+               
 
                         </form>
 
@@ -52,8 +58,8 @@ export default function page() {
                 </div>
 
             </div>
-            {/* 
-            <Footer/> */}
+            
+            <Footer/>
 
 
 

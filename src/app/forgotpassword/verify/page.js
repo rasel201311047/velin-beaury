@@ -2,13 +2,14 @@
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 import { Images } from '../../../../public/assets/images/Images'
-import Link from 'next/link';
 import React, { useState, useRef } from "react";
+import { useRouter } from 'next/navigation';
 
 export default function page() {
 
     const [otp, setOtp] = useState(new Array(6).fill(""));
     const inputRefs = useRef([]);
+    const router=useRouter();
 
     const handleChange = (element, index) => {
         if (isNaN(element.value)) return;
@@ -33,6 +34,10 @@ export default function page() {
         e.preventDefault();
         alert("Entered Code: " + otp.join(""));
     };
+
+    const handleSend=()=>{
+         router.push("/forgotpassword/verify/changepassword");
+    }
 
     return (
         <div className=' bg-[#F4F0E9] w-full'>
@@ -63,7 +68,7 @@ export default function page() {
                                 ))}
                             </div>
 
-                            <button type="submit" className="w-full bg-black text-white py-2 text-base font-roboto font-medium rounded-md hover:bg-gray-800 transition mt-8 mb-2" >
+                            <button onClick={handleSend} type="submit" className="w-full bg-black text-white py-2 text-base font-roboto font-medium rounded-md hover:bg-gray-800 transition mt-8 mb-2" >
                                 Send
                             </button>
 
@@ -73,8 +78,8 @@ export default function page() {
                 </div>
 
             </div>
-            {/* 
-            <Footer/> */}
+            
+            <Footer/>
 
 
 
