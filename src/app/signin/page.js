@@ -57,9 +57,13 @@ export default function page() {
 
                         <Link href={'/forgotpassword'}><p className='text-[#222122] text-xs font-roboto font-normal py-2'>Fogot password</p></Link>
 
-                        <button type="submit" className="w-full bg-black text-white py-2 text-base font-roboto font-medium rounded-md hover:bg-gray-800 transition mt-8 mb-2" >
-                            SUBMIT
-                        </button>
+
+                        <Link href={'/home'} className='w-full ' >
+                            <div className="w-full bg-black text-white py-2 text-base font-roboto font-medium rounded-md hover:bg-gray-800 transition mt-8 mb-2 text-center">
+                                Sign In
+                            </div>
+
+                        </Link>
                         <div className='flex justify-center items-center gap-2'>
                             <p className='font-roboto font-normal text-[#222122] text-sm'> Don&apos;t have an account?</p>
                             <Link href={'/signup'}><p className='font-roboto font-semibold text-sm text-black underline'>Sign up</p></Link>
@@ -69,8 +73,8 @@ export default function page() {
                 </div>
 
             </div>
-            
-            <Footer/>
+
+            <Footer />
 
 
 
