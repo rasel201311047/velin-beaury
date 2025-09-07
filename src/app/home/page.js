@@ -1,3 +1,4 @@
+"use client";
 import ComingSoon from '@/components/ComingSoon'
 import ContractUs from '@/components/ContractUs'
 import Footer from '@/components/Footer'

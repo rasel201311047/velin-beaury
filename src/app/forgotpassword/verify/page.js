@@ -6,7 +6,7 @@ import React, { useState, useRef } from "react";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-export default function page() {
+export default function Page() {
 
     const [otp, setOtp] = useState(new Array(6).fill(""));
     const inputRefs = useRef([]);

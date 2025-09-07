@@ -1,25 +1,31 @@
 "use client";
-import Footer from '@/components/Footer'
-import Image from 'next/image'
-import React, { useState, useRef } from 'react'
-import { Images } from '../../../public/assets/images/Images'
-import Link from 'next/link';
-import { useRouter, useSearchParams } from "next/navigation";
-export default function page() {
-    const [isProDropdownOpen, setIsProDropdownOpen] = useState(false);
-    const [isCityDropdownOpen, setIsCityDropdownOpen] = useState(false);
-    const [isSteetDropdownOpen, setIsSteetDropdownOpen] = useState(false);
-    const [valuePro, setValuePro] = useState(null);
-    const [valueCity, setValueCity] = useState(null);
-    const [valueStreet, setValueStreet] = useState(null);
-    const [fileName, setFileName] = useState("");
-    const fileInputRef = useRef(null);
-    const imageInputRef = useRef(null);
-    const [imageName, setImageName] = useState("");
-    const router = useRouter();
-    const searchParam = useSearchParams();
-    const type = searchParam.get("type");
-    console.log(type);
+
+import Footer from "@/components/Footer";
+import Image from "next/image";
+import React, { useState, useRef } from "react";
+import { Images } from "../../../public/assets/images/Images";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+export default function Page({ searchParams }) {
+  // Query param from URL: /signup?type=professional
+  const type = searchParams?.type || "";
+
+  const [isProDropdownOpen, setIsProDropdownOpen] = useState(false);
+  const [isCityDropdownOpen, setIsCityDropdownOpen] = useState(false);
+  const [isSteetDropdownOpen, setIsSteetDropdownOpen] = useState(false);
+  const [valuePro, setValuePro] = useState(null);
+  const [valueCity, setValueCity] = useState(null);
+  const [valueStreet, setValueStreet] = useState(null);
+  const [fileName, setFileName] = useState("");
+  const [imageName, setImageName] = useState("");
+
+  const fileInputRef = useRef(null);
+  const imageInputRef = useRef(null);
+
+  const router = useRouter();
+
+  console.log("type =", type);
 
     const profession = [
         { title: 'Farmer' },
