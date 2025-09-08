@@ -6,26 +6,34 @@ import React, { useState, useRef } from "react";
 import { Images } from "../../../public/assets/images/Images";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { City } from "country-state-city";
+
 
 export default function Page({ searchParams }) {
-  // Query param from URL: /signup?type=professional
-  const type = searchParams?.type || "";
+    // Query param from URL: /signup?type=professional
+    const type = searchParams?.type || "";
 
-  const [isProDropdownOpen, setIsProDropdownOpen] = useState(false);
-  const [isCityDropdownOpen, setIsCityDropdownOpen] = useState(false);
-  const [isSteetDropdownOpen, setIsSteetDropdownOpen] = useState(false);
-  const [valuePro, setValuePro] = useState(null);
-  const [valueCity, setValueCity] = useState(null);
-  const [valueStreet, setValueStreet] = useState(null);
-  const [fileName, setFileName] = useState("");
-  const [imageName, setImageName] = useState("");
+    const [isProDropdownOpen, setIsProDropdownOpen] = useState(false);
+    const [isCityDropdownOpen, setIsCityDropdownOpen] = useState(false);
+    const [isSteetDropdownOpen, setIsSteetDropdownOpen] = useState(false);
+    const [valuePro, setValuePro] = useState(null);
+    const [valueCity, setValueCity] = useState(null);
+    const [valueStreet, setValueStreet] = useState(null);
+    const [fileName, setFileName] = useState("");
+    const [imageName, setImageName] = useState("");
+    const fileInputRef = useRef(null);
+    const imageInputRef = useRef(null);
+    //city street
+    const [cityQuery, setCityQuery] = useState("");
+    const [streetQuery, setStreetQuery] = useState("");
+    const [filteredCities, setFilteredCities] = useState([]);
+    const [streetSuggestions, setStreetSuggestions] = useState([]);
+    const [cityOpen, setCityOpen] = useState(false);
+    const [streetOpen, setStreetOpen] = useState(false);
 
-  const fileInputRef = useRef(null);
-  const imageInputRef = useRef(null);
+    const router = useRouter();
 
-  const router = useRouter();
-
-  console.log("type =", type);
+    console.log("type =", type);
 
     const profession = [
         { title: 'Farmer' },
@@ -147,6 +155,50 @@ export default function Page({ searchParams }) {
         router.push('/signup/signupsuccess')
     }
 
+    //--------------------------city 
+
+
+    // Get all cities of Switzerland
+    const swissCities = City.getCitiesOfCountry("CH");
+
+    // Handle city input
+    const handleCityInput = (e) => {
+        const value = e.target.value;
+        setCityQuery(value);
+
+        if (value.length >= 1) {
+            const filtered = swissCities.filter((c) =>
+                c.name.toLowerCase().includes(value.toLowerCase())
+            );
+            setFilteredCities(filtered);
+            setCityOpen(true);
+        } else {
+            setFilteredCities([]);
+            setCityOpen(false);
+        }
+    };
+
+    // Handle street input (fetch from OpenStreetMap)
+    const handleStreetInput = async (e) => {
+        const value = e.target.value;
+        setStreetQuery(value);
+
+        if (value.length >= 1 && cityQuery) {
+            try {
+                const res = await fetch(
+                    `https://nominatim.openstreetmap.org/search?street=${value}&city=${cityQuery}&country=Switzerland&format=json&addressdetails=1&limit=5`
+                );
+                const data = await res.json();
+                setStreetSuggestions(data);
+                setStreetOpen(true);
+            } catch (err) {
+                console.error(err);
+            }
+        } else {
+            setStreetSuggestions([]);
+            setStreetOpen(false);
+        }
+    };
     return (
         <div className=' bg-[#F4F0E9] w-full'>
             <div className='w-full py-10 md:py-20'>
@@ -307,30 +359,21 @@ export default function Page({ searchParams }) {
 
                                     </div>
                                 </div>
+                                {/* city input */}
+                                <div className="relative">
+                                    <input type="text" value={cityQuery} onChange={handleCityInput} onFocus={() => cityQuery.length >= 1 && setCityOpen(true)}
+                                        onBlur={() => setTimeout(() => setCityOpen(false), 150)} placeholder="Enter Your City" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
 
-                                <button onClick={handleCity} className=" relative w-full outline-none  font-dm border border-[#000000] rounded-lg py-2 px-4 flex justify-between items-center bg-white">
-                                    <div className='text-[#222122] font-roboto font-normal text-sm'>
-                                        {valueCity ? valueCity : 'Select Your City'}
-                                    </div>
-                                    <div>
-                                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.07 0.742002L6.38503 5.353C6.28281 5.45413 6.14482 5.51085 6.00103 5.51085C5.85724 5.51085 5.71925 5.45413 5.61703 5.353L0.931027 0.743002C0.828172 0.641926 0.689734 0.58529 0.545527 0.58529C0.401321 0.58529 0.262883 0.641926 0.160027 0.743002C0.109379 0.792379 0.0691266 0.851395 0.0416429 0.916572C0.0141592 0.981748 0 1.05177 0 1.1225C0 1.19324 0.0141592 1.26326 0.0416429 1.32843C0.0691266 1.39361 0.109379 1.45262 0.160027 1.502L4.84403 6.112C5.15255 6.41493 5.56765 6.58465 6.00003 6.58465C6.4324 6.58465 6.84751 6.41493 7.15603 6.112L11.84 1.502C11.8908 1.45261 11.9312 1.39353 11.9588 1.32826C11.9864 1.26299 12.0006 1.19286 12.0006 1.122C12.0006 1.05115 11.9864 0.981011 11.9588 0.915741C11.9312 0.850472 11.8908 0.791395 11.84 0.742002C11.7372 0.640926 11.5987 0.58429 11.4545 0.58429C11.3103 0.58429 11.1719 0.640926 11.069 0.742002" fill="black" />
-                                        </svg>
-                                    </div>
-                                    {isCityDropdownOpen && (
-                                        <div className="absolute top-[100%] left-0 mt-2 w-full bg-[#F4F0E9] h-48 border border-gray-700 rounded-md shadow-lg overflow-y-scroll z-50">
-                                            {citystreet.map((item, index) => (
-                                                <button
-                                                    key={index}
-                                                    onClick={() => handleCityValue(item.city)}
-                                                    className="flex items-center space-x-3 w-full px-4 py-3 text-left hover:bg-gray-800 hover:text-white transition-colors"
-                                                >
-                                                    {item.city}
+                                    {cityOpen && filteredCities.length > 0 && (
+                                        <div className="absolute mt-1 w-full bg-white border rounded shadow-lg max-h-60 overflow-y-auto z-10">
+                                            {filteredCities.map((city, idx) => (
+                                                <button key={idx} onMouseDown={(e) => e.preventDefault()} onClick={() => { setCityQuery(city.name); setCityOpen(false); }} className="block w-full text-left px-4 py-2 hover:bg-gray-200" >
+                                                    {city.name}
                                                 </button>
                                             ))}
                                         </div>
                                     )}
-                                </button>
+                                </div>
 
                             </div>
                             <div className='flex-1'>
@@ -347,29 +390,21 @@ export default function Page({ searchParams }) {
                                     </div>
                                 </div>
 
-                                <button onClick={handleStreet} className=" relative w-full outline-none  font-dm border border-[#000000] rounded-lg py-2 px-4 flex justify-between items-center bg-white">
-                                    <div className='text-[#222122] font-roboto font-normal text-sm'>
-                                        {valueStreet ? valueStreet : 'Select Your Street Address'}
-                                    </div>
-                                    <div>
-                                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.07 0.742002L6.38503 5.353C6.28281 5.45413 6.14482 5.51085 6.00103 5.51085C5.85724 5.51085 5.71925 5.45413 5.61703 5.353L0.931027 0.743002C0.828172 0.641926 0.689734 0.58529 0.545527 0.58529C0.401321 0.58529 0.262883 0.641926 0.160027 0.743002C0.109379 0.792379 0.0691266 0.851395 0.0416429 0.916572C0.0141592 0.981748 0 1.05177 0 1.1225C0 1.19324 0.0141592 1.26326 0.0416429 1.32843C0.0691266 1.39361 0.109379 1.45262 0.160027 1.502L4.84403 6.112C5.15255 6.41493 5.56765 6.58465 6.00003 6.58465C6.4324 6.58465 6.84751 6.41493 7.15603 6.112L11.84 1.502C11.8908 1.45261 11.9312 1.39353 11.9588 1.32826C11.9864 1.26299 12.0006 1.19286 12.0006 1.122C12.0006 1.05115 11.9864 0.981011 11.9588 0.915741C11.9312 0.850472 11.8908 0.791395 11.84 0.742002C11.7372 0.640926 11.5987 0.58429 11.4545 0.58429C11.3103 0.58429 11.1719 0.640926 11.069 0.742002" fill="black" />
-                                        </svg>
-                                    </div>
-                                    {isSteetDropdownOpen && (
-                                        <div className="absolute top-[100%] left-0 mt-2 w-full bg-[#F4F0E9] h-48 border border-gray-700 rounded-md shadow-lg overflow-y-scroll z-50">
-                                            {citystreet.map((item, index) => (
-                                                <button
-                                                    key={index}
-                                                    onClick={() => handleStreetValue(item.street)}
-                                                    className="flex items-center space-x-3 w-full px-4 py-3 text-left hover:bg-gray-800 hover:text-white transition-colors"
-                                                >
-                                                    {item.street}
+                                <div className="relative">
+                                    <input type="text" value={streetQuery} onChange={handleStreetInput} onFocus={() => streetQuery.length >= 2 && setStreetOpen(true)}
+                                        onBlur={() => setTimeout(() => setStreetOpen(false), 150)} placeholder="Enter Your street " className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
+
+                                    {streetOpen && streetSuggestions.length > 0 && (
+                                        <div className="absolute mt-1 w-full bg-white border rounded shadow-lg max-h-60 overflow-y-auto z-10">
+                                            {streetSuggestions.map((street, idx) => (
+                                                <button key={idx} onMouseDown={(e) => e.preventDefault()} onClick={() => { setStreetQuery(street.display_name); setStreetOpen(false); }}
+                                                    className="block w-full text-left px-4 py-2 hover:bg-gray-200">
+                                                    {street.display_name}
                                                 </button>
                                             ))}
                                         </div>
                                     )}
-                                </button>
+                                </div>
 
 
                             </div>
@@ -472,29 +507,20 @@ export default function Page({ searchParams }) {
                                     </div>
                                 </div>
 
-                                <button onClick={handleCity} className=" relative w-full outline-none  font-dm border border-[#000000] rounded-lg py-2 px-4 flex justify-between items-center bg-white">
-                                    <div className='text-[#222122] font-roboto font-normal text-sm'>
-                                        {valueCity ? valueCity : 'Select Your City'}
-                                    </div>
-                                    <div>
-                                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.07 0.742002L6.38503 5.353C6.28281 5.45413 6.14482 5.51085 6.00103 5.51085C5.85724 5.51085 5.71925 5.45413 5.61703 5.353L0.931027 0.743002C0.828172 0.641926 0.689734 0.58529 0.545527 0.58529C0.401321 0.58529 0.262883 0.641926 0.160027 0.743002C0.109379 0.792379 0.0691266 0.851395 0.0416429 0.916572C0.0141592 0.981748 0 1.05177 0 1.1225C0 1.19324 0.0141592 1.26326 0.0416429 1.32843C0.0691266 1.39361 0.109379 1.45262 0.160027 1.502L4.84403 6.112C5.15255 6.41493 5.56765 6.58465 6.00003 6.58465C6.4324 6.58465 6.84751 6.41493 7.15603 6.112L11.84 1.502C11.8908 1.45261 11.9312 1.39353 11.9588 1.32826C11.9864 1.26299 12.0006 1.19286 12.0006 1.122C12.0006 1.05115 11.9864 0.981011 11.9588 0.915741C11.9312 0.850472 11.8908 0.791395 11.84 0.742002C11.7372 0.640926 11.5987 0.58429 11.4545 0.58429C11.3103 0.58429 11.1719 0.640926 11.069 0.742002" fill="black" />
-                                        </svg>
-                                    </div>
-                                    {isCityDropdownOpen && (
-                                        <div className="absolute top-[100%] left-0 mt-2 w-full bg-[#F4F0E9] h-48 border border-gray-700 rounded-md shadow-lg overflow-y-scroll z-50">
-                                            {citystreet.map((item, index) => (
-                                                <button
-                                                    key={index}
-                                                    onClick={() => handleCityValue(item.city)}
-                                                    className="flex items-center space-x-3 w-full px-4 py-3 text-left hover:bg-gray-800 hover:text-white transition-colors"
-                                                >
-                                                    {item.city}
+                                <div className="relative">
+                                    <input type="text" value={cityQuery} onChange={handleCityInput} onFocus={() => cityQuery.length >= 1 && setCityOpen(true)}
+                                        onBlur={() => setTimeout(() => setCityOpen(false), 150)} placeholder="Enter Your City" className="w-full border rounded py-2 px-4" />
+
+                                    {cityOpen && filteredCities.length > 0 && (
+                                        <div className="absolute mt-1 w-full bg-white border rounded shadow-lg max-h-60 overflow-y-auto z-10">
+                                            {filteredCities.map((city, idx) => (
+                                                <button key={idx} onMouseDown={(e) => e.preventDefault()} onClick={() => { setCityQuery(city.name); setCityOpen(false); }} className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required  >
+                                                    {city.name}
                                                 </button>
                                             ))}
                                         </div>
                                     )}
-                                </button>
+                                </div>
 
                             </div>
                             <div className='flex-1'>
@@ -511,29 +537,21 @@ export default function Page({ searchParams }) {
                                     </div>
                                 </div>
 
-                                <button onClick={handleStreet} className=" relative w-full outline-none  font-dm border border-[#000000] rounded-lg py-2 px-4 flex justify-between items-center bg-white">
-                                    <div className='text-[#222122] font-roboto font-normal text-sm'>
-                                        {valueStreet ? valueStreet : 'Select Your Street Address'}
-                                    </div>
-                                    <div>
-                                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.07 0.742002L6.38503 5.353C6.28281 5.45413 6.14482 5.51085 6.00103 5.51085C5.85724 5.51085 5.71925 5.45413 5.61703 5.353L0.931027 0.743002C0.828172 0.641926 0.689734 0.58529 0.545527 0.58529C0.401321 0.58529 0.262883 0.641926 0.160027 0.743002C0.109379 0.792379 0.0691266 0.851395 0.0416429 0.916572C0.0141592 0.981748 0 1.05177 0 1.1225C0 1.19324 0.0141592 1.26326 0.0416429 1.32843C0.0691266 1.39361 0.109379 1.45262 0.160027 1.502L4.84403 6.112C5.15255 6.41493 5.56765 6.58465 6.00003 6.58465C6.4324 6.58465 6.84751 6.41493 7.15603 6.112L11.84 1.502C11.8908 1.45261 11.9312 1.39353 11.9588 1.32826C11.9864 1.26299 12.0006 1.19286 12.0006 1.122C12.0006 1.05115 11.9864 0.981011 11.9588 0.915741C11.9312 0.850472 11.8908 0.791395 11.84 0.742002C11.7372 0.640926 11.5987 0.58429 11.4545 0.58429C11.3103 0.58429 11.1719 0.640926 11.069 0.742002" fill="black" />
-                                        </svg>
-                                    </div>
-                                    {isSteetDropdownOpen && (
-                                        <div className="absolute top-[100%] left-0 mt-2 w-full bg-[#F4F0E9] h-48 border border-gray-700 rounded-md shadow-lg overflow-y-scroll z-50">
-                                            {citystreet.map((item, index) => (
-                                                <button
-                                                    key={index}
-                                                    onClick={() => handleStreetValue(item.street)}
-                                                    className="flex items-center space-x-3 w-full px-4 py-3 text-left hover:bg-gray-800 hover:text-white transition-colors"
-                                                >
-                                                    {item.street}
+                                <div className="relative">
+                                    <input type="text" value={streetQuery} onChange={handleStreetInput} onFocus={() => streetQuery.length >= 2 && setStreetOpen(true)}
+                                        onBlur={() => setTimeout(() => setStreetOpen(false), 150)} placeholder="Enter Your street" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
+
+                                    {streetOpen && streetSuggestions.length > 0 && (
+                                        <div className="absolute mt-1 w-full bg-white border rounded shadow-lg max-h-60 overflow-y-auto z-10">
+                                            {streetSuggestions.map((street, idx) => (
+                                                <button key={idx} onMouseDown={(e) => e.preventDefault()} onClick={() => { setStreetQuery(street.display_name); setStreetOpen(false); }}
+                                                    className="block w-full text-left px-4 py-2 hover:bg-gray-200">
+                                                    {street.display_name}
                                                 </button>
                                             ))}
                                         </div>
                                     )}
-                                </button>
+                                </div>
 
 
                             </div>

@@ -7,6 +7,7 @@ import ComingSoon from "@/components/ComingSoon";
 import Platfrom from "@/components/Platfrom";
 import ContractUs from "@/components/ContractUs";
 import Footer from "@/components/Footer";
+import City from "@/components/in/City";
 
 export default function Home() {
   return (
