@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 
-export default function page() {
+export default function Page() {
     const [showValue,setShowValue]=useState(false);
     return (
         <div className=' bg-[#F4F0E9] w-full'>

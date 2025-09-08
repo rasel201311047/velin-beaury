@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { Images } from '../../../../../public/assets/images/Images'
 import Link from 'next/link';
 
-export default function page() {
+export default function Page() {
              const [showValue, setShowValue] = useState({ np:false,cp:false });
     return (
         <div className=' bg-[#F4F0E9] w-full'>
