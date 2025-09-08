@@ -36,19 +36,13 @@ export default function Page({ searchParams }) {
     console.log("type =", type);
 
     const profession = [
-        { title: 'Teacher' },
-        { title: 'Doctor' },
-        { title: 'Engineer' },
-        { title: 'Artist' },
-        { title: 'Driver' },
-        { title: 'Chef' },
-        { title: 'Police Officer' },
-        { title: 'Software Developer' },
-        { title: 'Electrician' },
-        { title: 'Plumber' },
-        { title: 'Lawyer' },
-        { title: 'Mechanic' },
-        { title: 'Businessman' },
+        { title: 'Nails' },
+        { title: 'Massage' },
+        { title: 'Eyelashes' },
+        { title: 'Barber' },
+        { title: 'Face & Body' },
+        { title: 'Make Up' },
+        { title: 'Hair Style' },
     ];
     const handleProDropdown = () => {
         setIsProDropdownOpen(!isProDropdownOpen);

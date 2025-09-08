@@ -12,7 +12,7 @@ export default function OurServices() {
         { image: Images.option3, title: 'Eyelashes' },
         { image: Images.option4, title: 'Barber' },
         { image: Images.option5, title: 'Face & Body' },
-        { image: Images.option6, title: 'Mke Up' },
+        { image: Images.option6, title: 'Make Up' },
         { image: Images.option7, title: 'Hair Style' },
     ]
 

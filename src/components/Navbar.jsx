@@ -15,11 +15,9 @@ export default function Navbar() {
   // Sample language data
   const languages = [
     { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
     { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'ja', name: '日本語', flag: '🇯🇵' },
-    { code: 'zh', name: '中文', flag: '🇨🇳' },
+    { code: 'it', name: 'Italiano', flag: '🇮🇹' },
   ];
 
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
@@ -29,9 +27,9 @@ export default function Navbar() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsLangDropdownOpen(false);
       }
-      if (mobileMenuRef.current && 
-          !mobileMenuRef.current.contains(event.target) && 
-          !event.target.closest('.hamburger-menu')) {
+      if (mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        !event.target.closest('.hamburger-menu')) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -60,9 +58,9 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/*---------- Logo */}
         <Link href="/" className="flex items-center">
-          <Image src={Images.darklogo} alt="Logo" className='md:w-20 h-auto w-16'/>
+          <Image src={Images.darklogo} alt="Logo" className='md:w-20 h-auto w-16' />
         </Link>
-        
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-4">
           <div className="flex items-center space-x-8">
@@ -115,11 +113,11 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden hamburger-menu text-white text-2xl" 
+        <button
+          className="md:hidden hamburger-menu text-white text-2xl"
           onClick={toggleMobileMenu}
         >
-          {isMobileMenuOpen ? <IoCloseSharp/> : <GiHamburgerMenu />}
+          {isMobileMenuOpen ? <IoCloseSharp /> : <GiHamburgerMenu />}
         </button>
       </div>
 
@@ -134,7 +132,7 @@ export default function Navbar() {
               <Link href="/" className="text-[#FFFFFF] hover:text-gray-300 transition-colors text-lg font-manrope py-2">
                 Contact Us
               </Link>
-              
+
               {/* Mobile Language Selector */}
               <div className="relative py-2" ref={dropdownRef}>
                 <button onClick={toggleLanguageDropdown} className="flex items-center space-x-2 text-[#FFFFFF] hover:text-gray-300 transition-colors px-3 py-2 rounded-md hover:bg-gray-800 w-full" >
@@ -162,9 +160,9 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-              
+
               <div className="h-px bg-gray-700 my-2"></div>
-              
+
               {/* Mobile Auth Buttons */}
               <div className="flex flex-col space-y-3 pt-2">
                 <Link href="/signin" className="text-lg border text-center font-manrope border-[#FFFFFF] text-[#FFFFFF] px-4 py-2 rounded-md hover:bg-gray-800 transition-colors" >
