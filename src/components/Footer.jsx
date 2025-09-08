@@ -88,7 +88,7 @@ export default function Footer() {
                                 <h2 className='font-playfair text-xl text-white font-semibold mb-4'>Contact Us</h2>
                                 <ul>
                                     <li className='font-manrope font-normal mb-6 text-base text-white'><span className='font-manrope font-medium text-base text-white'>Address :</span> weinbergstrasse 14 ,6300 Zug </li>
-                                    <li className='font-manrope font-normal mb-1 text-base text-white'><span className='font-manrope font-medium text-base text-white'>Mail :</span>velinservice@gmail.com </li>
+                                    <li className='font-manrope font-normal mb-1 text-base text-white'><span className='font-manrope font-medium text-base text-white'>Mail :</span>Velusyservice@gmail.com </li>
                                 </ul>
 
                             </div>
@@ -99,7 +99,7 @@ export default function Footer() {
             </div>
 
             <div className='py-2 bg-[#FFFFFF] '>
-                <p className='font-poppins text-center text-sm text-black'>&copy;  Copyright 2025, Velin.miriam | All rights reserved.</p>
+                <p className='font-poppins text-center text-sm text-black'>&copy;  Copyright 2025, Velusy.miriam | All rights reserved.</p>
 
             </div>
         </div>

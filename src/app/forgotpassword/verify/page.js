@@ -10,7 +10,7 @@ export default function Page() {
 
     const [otp, setOtp] = useState(new Array(6).fill(""));
     const inputRefs = useRef([]);
-    const router=useRouter();
+    const router = useRouter();
 
     const handleChange = (element, index) => {
         if (isNaN(element.value)) return;
@@ -56,21 +56,21 @@ export default function Page() {
 
                     {/* from */}
                     <div className='w-full '>
-                        <form className='lg:w-4/12 md:w-6/12 w-[95%] mx-auto'>
+                        <form className='lg:w-4/12 md:w-6/12 w-full mx-auto '>
                             <div className='font-roboto text-[#040404] text-base font-normal'>Code</div>
 
 
                             <div className="flex justify-between gap-2">
                                 {otp.map((data, index) => (
-                                    <input  key={index}  type="text"  maxLength="1"   value={data} onChange={(e) => handleChange(e.target, index)}  onKeyDown={(e) => handleKeyDown(e, index)}  ref={(el) => (inputRefs.current[index] = el)} 
-                                     className="md:w-16 md:h-16 w-10 h-10 text-center border border-gray-400 rounded-lg text-lg focus:outline-none " />
+                                    <input key={index} type="text" maxLength="1" value={data} onChange={(e) => handleChange(e.target, index)} onKeyDown={(e) => handleKeyDown(e, index)} ref={(el) => (inputRefs.current[index] = el)}
+                                        className="md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 sm:w-16 sm:h-16 h-12 w-12 text-center border border-gray-400 rounded-lg text-lg focus:outline-none " />
                                 ))}
                             </div>
-                            <Link href={'/forgotpassword/verify/changepassword'} className='w-full ' >
-                            <div className="w-full bg-black text-white py-2 text-base font-roboto font-medium rounded-md hover:bg-gray-800 transition mt-8 mb-2 text-center">
-                                Send
+                            <Link href={'/forgotpassword/verify/changepassword'} className='w-full mx-auto ' >
+                                <div className="w-full bg-black text-white py-2 text-base font-roboto font-medium rounded-md hover:bg-gray-800 transition mt-8 mb-2 text-center mx-auto">
+                                    Send
 
-                            </div>
+                                </div>
 
                             </Link>
 
@@ -80,8 +80,8 @@ export default function Page() {
                 </div>
 
             </div>
-            
-            <Footer/>
+
+            <Footer />
 
 
 

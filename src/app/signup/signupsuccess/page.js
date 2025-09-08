@@ -28,7 +28,7 @@ export default function Page() {
                                 <Image src={Images.thank} alt='thanks' className='md:w-64 h-auto w-36 mx-auto' />
                             </div>
 
-                            <p className='font-poppins font-semibold text-base text-[#222122] text-center mb-3'>Thank you for signing up for Velin’s pre-launch.</p>
+                            <p className='font-poppins font-semibold text-base text-[#222122] text-center mb-3'>Thank you for signing up for Velusy’s pre-launch.</p>
                             <p className='font-poppins font-semibold text-base text-[#222122] text-center mb-3'>You’re officially among the first!</p>
                             <p className='font-poppins font-semibold text-base text-[#222122] text-center mb-3 w-[65%] mx-auto'>We’ll keep you updated via email and SMS with all the latest news about the launch — see you very soon!</p>
 

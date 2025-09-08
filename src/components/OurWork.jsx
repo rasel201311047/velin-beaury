@@ -24,7 +24,7 @@ export default function OurWork() {
             },
             {
                 "title": "The more you book, the more you save",
-                "description": "Accumulate discounts and reward points every time you use Velin."
+                "description": "Accumulate discounts and reward points every time you use Velusy."
             }
         ]
     }

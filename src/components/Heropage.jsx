@@ -19,7 +19,7 @@ export default function Heropage() {
       <div className="bg-gradient-to-br from-[#FDFCFB] to-[#F3EFE7] w-full pt-5 pb-14">
         <div className="container mx-auto px-4">
           <h2 className='text-center font-playfair font-bold text-[#040404] text-xl md:text-4xl my-6'>
-            Velin was created to value every moment you give yourself.
+            Velusy was created to value every moment you give yourself.
           </h2>
           
           {/* Custom list with black circles */}
@@ -46,7 +46,7 @@ export default function Heropage() {
           </div>
           
           <h4 className='text-center font-playfair font-bold text-[#040404] text-lg md:text-2xl mt-10'>
-            “On Velin, everyone finds their own space”
+            “On Velusy, everyone finds their own space”
           </h4>
         </div>
       </div>

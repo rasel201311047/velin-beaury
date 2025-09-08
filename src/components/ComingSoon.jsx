@@ -7,7 +7,7 @@ export default function ComingSoon({sign}) {
     console.log(sign)
     return (
         <div className='bg-gradient-to-br from-[#F3EFE7] to-[#FDFCFA] py-8'>
-            <div className='text-center py-5 font-playfair text-3xl font-semibold'>{sign==='signin'?'Velin is coming Soon.....':'Velusy is coming Soon.....'}</div>
+            <div className='text-center py-5 font-playfair text-3xl font-semibold'>{sign==='signin'?'Velusy is coming Soon.....':'Velusy is coming Soon.....'}</div>
             <p className='text-center font-playfair text-base mb-10'>
                 And for you, who are choosing to be with us from the very beginning, we’ve prepared a surprise.
             </p>
