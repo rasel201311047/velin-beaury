@@ -57,7 +57,7 @@ export default function OurWork() {
 
     return (
         <div className='bg-gradient-to-br from-[#FBFAF7] to-[#F3EFE7] py-8'>
-            <div className='py-5  w-full text-center font-playfair text-3xl'>How Velusy Works</div>
+            <div className='py-5  w-full text-center font-playfair text-xl sm:text-2xl md:text-3xl'>How Velusy Works</div>
             <div className=' container mx-auto md:flex gap-4'>
                 <div className='mx-2 my-2 md:my-0 md:mx-0 grow bg-gradient-to-br from-[#F3EFE7] to-[#FFFFFF] shadow-sm rounded-lg p-8 shadow-[#00000040] border ' >
                     <WorkCart item={forclient} />

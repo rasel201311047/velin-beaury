@@ -12,7 +12,7 @@ import React from 'react'
 export default function page() {
   return (
     <div className='w-full'>
-        <Navbar/>
+        <Navbar  sign='signin'/>
         <Heropage/>
         <OurServices/>
         <OurWork/>

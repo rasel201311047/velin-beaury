@@ -155,19 +155,19 @@ export default function Page({ searchParams }) {
                         <div className='w-full mx-auto mb-4'>
                             <Image src={Images.lightlogo} alt='logo' className='md:w-64 h-auto w-36 mx-auto' />
                         </div>
-                        <p className='font-poppins font-normal text-base text-[#222122] text-center lg:w-[37%] md:w-[80%] w-full mx-auto pt-6 pb-6'>
+                        <p className='font-poppins font-normal text-xs sm:text-sm md:text-base text-[#222122] text-center lg:w-[37%] md:w-[80%] w-full mx-auto pt-6 pb-6'>
                             Velusy is ready to launch across Switzerland.
                             And those who pre-register now will have a front-row seat.
                         </p>
                         <div className='w-full px-4'>
-                            <ul className=' list-disc font-poppins text-base  lg:w-[60%] lg:px-8 md:w-[70%] w-[95%] mx-auto pb-6 '>
+                            <ul className=' list-disc font-poppins text-xs sm:text-sm md:text-base lg:w-[60%] lg:px-8 md:w-[70%] w-[95%] mx-auto pb-6 '>
                                 <li className='text-[#222122]'>Your profile will be added to the platform even before the launch</li>
                                 <li className='text-[#222122]'>You will be among the first professionals visible and discovered by clients</li>
                                 <li className='text-[#222122]'>You could receive the first bookings before others sign up!</li>
 
                             </ul>
 
-                            <p className='lg:w-[70%] md:w-[90%] w-full font-poppins text-base font-normal mx-auto text-center'>An opportunity designed for those who choose to start this new chapter with us.
+                            <p className='lg:w-[70%] md:w-[90%] w-full font-poppins text-xs sm:text-sm md:text-base font-normal mx-auto text-center'>An opportunity designed for those who choose to start this new chapter with us.
                                 The right moment to stand out could be right now!</p>
                         </div>
 
@@ -182,7 +182,7 @@ export default function Page({ searchParams }) {
                         <div className=' flex  md:flex-row flex-col md:items-center w-full gap-4 mb-2'>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>First Name</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>First Name</div>
                                     
                                     <button onClick={() => setShowValue({ ...showValue, fname: !showValue.fname }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -195,13 +195,13 @@ export default function Page({ searchParams }) {
                                     <div className={`${showValue.fname?'':'hidden'} text-xs font-roboto text-gray-500`}>(mandatory-write your name)</div>
                                 </div>
 
-                                <input type="text" name="firstname" placeholder="Enter Your First Name" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
+                                <input type="text" name="firstname" placeholder="Enter Your First Name" className="w-full outline-none text-[#222122] text-sm md:text-base  font-dm border border-[#000000] rounded-lg py-2 px-4" required />
 
 
                             </div>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>Last Name</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>Last Name</div>
                                     <button onClick={() => setShowValue({ ...showValue, lname: !showValue.lname }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -213,7 +213,7 @@ export default function Page({ searchParams }) {
                                      <div className={`${showValue.lname?'':'hidden'} text-xs font-roboto text-gray-500`}>(Optional)</div>
                                 </div>
 
-                                <input type="text" name="lastname" placeholder="Enter Your Last Name" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
+                                <input type="text" name="lastname" placeholder="Enter Your Last Name" className="w-full outline-none text-sm md:text-base text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
 
 
                             </div>
@@ -225,7 +225,7 @@ export default function Page({ searchParams }) {
                         <div className={` flex  md:flex-row flex-col md:items-center gap-4 mb-2 ${type === 'guest' ? 'hidden' : ''}`}>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>User Name</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>User Name</div>
                                     <button onClick={() => setShowValue({ ...showValue, uname: !showValue.uname }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -237,7 +237,7 @@ export default function Page({ searchParams }) {
                                     <div className={`${showValue.uname?'':'hidden'} text-xs font-roboto text-gray-500`}>(mandatory-write username)</div>
                                 </div>
 
-                                <input type="text" name="username" placeholder="Enter Your Username" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
+                                <input type="text" name="username" placeholder="Enter Your Username" className="w-full outline-none text-sm md:text-base text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
 
 
                             </div>
@@ -251,7 +251,7 @@ export default function Page({ searchParams }) {
                         <div className={` flex  md:flex-row flex-col md:items-center gap-4 mb-2 ${type === 'guest' ? 'hidden' : ''}`}>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>Profession</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>Profession</div>
                                     <button onClick={() => setShowValue({ ...showValue, prof: !showValue.prof }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -302,7 +302,7 @@ export default function Page({ searchParams }) {
                         <div className={` flex  md:flex-row flex-col md:items-center gap-4 mb-2 ${type === 'guest' ? 'hidden' : ''}`}>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>City</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>City</div>
                                     <button onClick={() => setShowValue({ ...showValue, cityname: !showValue.cityname }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -316,12 +316,12 @@ export default function Page({ searchParams }) {
                                 {/* city input */}
                                 <div className="relative">
                                     <input type="text" value={cityQuery} onChange={handleCityInput} onFocus={() => cityQuery.length >= 1 && setCityOpen(true)}
-                                        onBlur={() => setTimeout(() => setCityOpen(false), 150)} placeholder="Enter Your City" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
+                                        onBlur={() => setTimeout(() => setCityOpen(false), 150)} placeholder="Enter Your City" className="w-full outline-none text-[#222122] text-sm md:text-base font-dm border border-[#000000] rounded-lg py-2 px-4" required />
 
                                     {cityOpen && filteredCities.length > 0 && (
                                         <div className="absolute mt-1 w-full bg-white border rounded shadow-lg max-h-60 overflow-y-auto z-10">
                                             {filteredCities.map((city, idx) => (
-                                                <button key={idx} onMouseDown={(e) => e.preventDefault()} onClick={() => { setCityQuery(city.name); setCityOpen(false); }} className="block w-full text-left px-4 py-2 hover:bg-gray-200" >
+                                                <button key={idx} onMouseDown={(e) => e.preventDefault()} onClick={() => { setCityQuery(city.name); setCityOpen(false); }} className="block w-full text-sm md:text-base text-left px-4 py-2 hover:bg-gray-200" >
                                                     {city.name}
                                                 </button>
                                             ))}
@@ -333,7 +333,7 @@ export default function Page({ searchParams }) {
                             <div className='flex-1'>
 
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>Street Address</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>Street Address</div>
                                     <button onClick={() => setShowValue({ ...showValue, sa: !showValue.sa }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -346,13 +346,13 @@ export default function Page({ searchParams }) {
 
                                 <div className="relative">
                                     <input type="text" value={streetQuery} onChange={handleStreetInput} onFocus={() => streetQuery.length >= 2 && setStreetOpen(true)}
-                                        onBlur={() => setTimeout(() => setStreetOpen(false), 150)} placeholder="Enter Your street " className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
+                                        onBlur={() => setTimeout(() => setStreetOpen(false), 150)} placeholder="Enter Your street " className="w-full text-sm md:text-base outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
 
                                     {streetOpen && streetSuggestions.length > 0 && (
                                         <div className="absolute mt-1 w-full bg-white border rounded shadow-lg max-h-60 overflow-y-auto z-10">
                                             {streetSuggestions.map((street, idx) => (
                                                 <button key={idx} onMouseDown={(e) => e.preventDefault()} onClick={() => { setStreetQuery(street.display_name); setStreetOpen(false); }}
-                                                    className="block w-full text-left px-4 py-2 hover:bg-gray-200">
+                                                    className="block w-full text-left px-4 py-2 hover:bg-gray-200 text-sm md:text-base">
                                                     {street.display_name}
                                                 </button>
                                             ))}
@@ -371,7 +371,7 @@ export default function Page({ searchParams }) {
                         <div className={`flex  md:flex-row flex-col md:items-center gap-4 mb-2 `}>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>E-Mail</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>E-Mail</div>
                                     <button onClick={() => setShowValue({ ...showValue, mail: !showValue.mail }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -383,7 +383,7 @@ export default function Page({ searchParams }) {
                                     <div className={`${showValue.mail?'':'hidden'} text-xs font-roboto text-gray-500`}>(mandatory-write your Email)</div>
                                 </div>
 
-                                <input type="email" name="email" placeholder="example@gmail.com" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
+                                <input type="email" name="email" placeholder="example@gmail.com" className="w-full text-sm md:text-base outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
 
 
                             </div>
@@ -400,7 +400,7 @@ export default function Page({ searchParams }) {
                         <div className=' flex  md:flex-row flex-col md:items-center gap-4 mb-2'>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>Phone</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>Phone</div>
                                     <button onClick={() => setShowValue({ ...showValue, mphone: !showValue.mphone }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -412,16 +412,16 @@ export default function Page({ searchParams }) {
                                     <div className={`${showValue.mphone?'':'hidden'} text-xs font-roboto text-gray-500`}>Not Available (outside working or break)</div>
                                 </div>
 
-                                <input type="number" name="phone" placeholder="+444" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
+                                <input  type="tel" name="phone"  defaultValue="+41" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
 
 
                             </div>
                             <div className={`flex-1 `}>
                                 <div className={`${type === 'guest' ? 'hidden' : ''}`}>
                                     <div className='flex items-center gap-2 mb-2'>
-                                        <div className='font-roboto text-[#040404] text-base font-normal'>Upload File</div>
+                                        <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>Upload File</div>
                                         <button onClick={() => setShowValue({ ...showValue, upfile: !showValue.upfile }) }>
-                                            <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="14" height="14" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.08429C12.3315 6.08429 12.6495 6.21599 12.8839 6.45041C13.1183 6.68483 13.25 7.00277 13.25 7.33429C13.25 7.66581 13.1183 7.98375 12.8839 8.21817C12.6495 8.45259 12.3315 8.58429 12 8.58429C11.6685 8.58429 11.3505 8.45259 11.1161 8.21817C10.8817 7.98375 10.75 7.66581 10.75 7.33429C10.75 7.00277 10.8817 6.68483 11.1161 6.45041C11.3505 6.21599 11.6685 6.08429 12 6.08429Z" fill="black" />
                                                 <path d="M12.25 17.5843V10.5843H11.25M10.5 17.5843H14" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
@@ -438,7 +438,7 @@ export default function Page({ searchParams }) {
                                             </svg>
 
                                         </div>
-                                        <div className='text-[#222122] font-roboto font-medium'>
+                                        <div className='text-[#222122] font-roboto font-medium text-xs sm:text-sm md:text-base'>
                                             {fileName || "Choose Your File"}
                                         </div>
                                     </button>
@@ -453,7 +453,7 @@ export default function Page({ searchParams }) {
                         <div className={` flex  md:flex-row flex-col md:items-center gap-4 mb-2 ${type === 'guest' ? '' : 'hidden'}`}>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>City</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>City</div>
                                     <button onClick={() => setShowValue({ ...showValue, cityname: !showValue.cityname }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -467,12 +467,12 @@ export default function Page({ searchParams }) {
 
                                 <div className="relative">
                                     <input type="text" value={cityQuery} onChange={handleCityInput} onFocus={() => cityQuery.length >= 1 && setCityOpen(true)}
-                                        onBlur={() => setTimeout(() => setCityOpen(false), 150)} placeholder="Enter Your City" className="w-full border rounded py-2 px-4" />
+                                        onBlur={() => setTimeout(() => setCityOpen(false), 150)} placeholder="Enter Your City" className="w-full border rounded py-2 text-sm md:text-base px-4" />
 
                                     {cityOpen && filteredCities.length > 0 && (
                                         <div className="absolute mt-1 w-full bg-white border rounded shadow-lg max-h-60 overflow-y-auto z-10">
                                             {filteredCities.map((city, idx) => (
-                                                <button key={idx} onMouseDown={(e) => e.preventDefault()} onClick={() => { setCityQuery(city.name); setCityOpen(false); }} className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required  >
+                                                <button key={idx} onMouseDown={(e) => e.preventDefault()} onClick={() => { setCityQuery(city.name); setCityOpen(false); }} className="w-full text-sm md:text-base outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required  >
                                                     {city.name}
                                                 </button>
                                             ))}
@@ -484,7 +484,7 @@ export default function Page({ searchParams }) {
                             <div className='flex-1'>
 
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>Street Address</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>Street Address</div>
                                     <button onClick={() => setShowValue({ ...showValue, sa: !showValue.sa }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -498,13 +498,13 @@ export default function Page({ searchParams }) {
 
                                 <div className="relative">
                                     <input type="text" value={streetQuery} onChange={handleStreetInput} onFocus={() => streetQuery.length >= 2 && setStreetOpen(true)}
-                                        onBlur={() => setTimeout(() => setStreetOpen(false), 150)} placeholder="Enter Your street" className="w-full outline-none text-[#222122] font-dm border border-[#000000] rounded-lg py-2 px-4" required />
+                                        onBlur={() => setTimeout(() => setStreetOpen(false), 150)} placeholder="Enter Your street" className="w-full outline-none text-[#222122] text-sm md:text-base font-dm border border-[#000000] rounded-lg py-2 px-4" required />
 
                                     {streetOpen && streetSuggestions.length > 0 && (
                                         <div className="absolute mt-1 w-full bg-white border rounded shadow-lg max-h-60 overflow-y-auto z-10">
                                             {streetSuggestions.map((street, idx) => (
                                                 <button key={idx} onMouseDown={(e) => e.preventDefault()} onClick={() => { setStreetQuery(street.display_name); setStreetOpen(false); }}
-                                                    className="block w-full text-left px-4 py-2 hover:bg-gray-200">
+                                                    className="block w-full text-left px-4 py-2 hover:bg-gray-200 text-sm md:text-base">
                                                     {street.display_name}
                                                 </button>
                                             ))}
@@ -524,7 +524,7 @@ export default function Page({ searchParams }) {
                         <div className=' flex  md:flex-row flex-col md:items-center gap-4 mb-2'>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>Upload Picture</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>Upload Picture</div>
                                     <button onClick={() => setShowValue({ ...showValue, up: !showValue.up }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -535,7 +535,7 @@ export default function Page({ searchParams }) {
                                     </button>
                                     <div className={`${showValue.up?'':'hidden'} text-xs font-roboto text-gray-500`}>(Optional-But recommended )</div>
                                 </div>
-                                <input type="file" accept=".png,.jpg,.jpeg" ref={imageInputRef} onChange={handleImageChange} className="hidden" />
+                                <input type="file" accept=".png,.jpg,.jpeg" ref={imageInputRef} onChange={handleImageChange} className="hidden text-sm md:text-base" />
 
                                 <button onClick={buttonPickImag} className="w-full outline-none  font-dm border border-[#000000] bg-white rounded-lg py-2 px-4 flex justify-center items-center gap-3">
                                     <div>
@@ -547,7 +547,7 @@ export default function Page({ searchParams }) {
 
 
                                     </div>
-                                    <div className='text-[#222122] font-roboto font-medium'>
+                                    <div className='text-[#222122] font-roboto font-medium text-sm md:text-base'>
                                         {imageName || "Choose Your File"}
                                     </div>
                                 </button>
@@ -566,7 +566,7 @@ export default function Page({ searchParams }) {
                         <div className=' flex md:flex-row flex-col md:items-center gap-4 mb-2'>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>Password</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>Password</div>
                                     <button onClick={() => setShowValue({ ...showValue, pass: !showValue.pass }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -584,7 +584,7 @@ export default function Page({ searchParams }) {
                             </div>
                             <div className='flex-1'>
                                 <div className='flex items-center gap-2 mb-2'>
-                                    <div className='font-roboto text-[#040404] text-base font-normal'>Confirm Password</div>
+                                    <div className='font-roboto text-[#040404] text-sm md:text-base font-normal'>Confirm Password</div>
                                     <button onClick={() => setShowValue({ ...showValue, cpass: !showValue.cpass }) }>
                                         <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 22.5843C13.3135 22.5859 14.6143 22.328 15.8278 21.8253C17.0412 21.3227 18.1434 20.5852 19.071 19.6553C20.0009 18.7277 20.7384 17.6255 21.2411 16.4121C21.7437 15.1986 22.0016 13.8978 22 12.5843C22.0016 11.2708 21.7437 9.97001 21.2411 8.75654C20.7384 7.54307 20.0009 6.44088 19.071 5.5133C18.1434 4.58338 17.0412 3.84591 15.8278 3.34325C14.6143 2.8406 13.3135 2.58268 12 2.5843C10.6866 2.58268 9.38572 2.8406 8.17225 3.34325C6.95878 3.84591 5.85659 4.58338 4.92901 5.5133C3.99909 6.44088 3.26162 7.54307 2.75897 8.75654C2.25631 9.97001 1.99839 11.2708 2.00001 12.5843C1.99839 13.8978 2.25631 15.1986 2.75897 16.4121C3.26162 17.6255 3.99909 18.7277 4.92901 19.6553C5.85659 20.5852 6.95878 21.3227 8.17225 21.8253C9.38572 22.328 10.6866 22.5859 12 22.5843Z" stroke="black" stroke-linejoin="round" />
@@ -606,12 +606,12 @@ export default function Page({ searchParams }) {
 
 
                         <div className='w-full md:w-8/12 lg:w-6/12 mx-auto'>
-                            <button onClick={handleSubmit} type="submit" className="w-full bg-black text-white py-2 text-base font-roboto font-medium rounded-md hover:bg-gray-800 transition mt-8 mb-2" >
+                            <button onClick={handleSubmit} type="submit" className="w-full bg-black text-white py-2 text-sm md:text-base font-roboto font-medium rounded-md hover:bg-gray-800 transition mt-8 mb-2" >
                                 SUBMIT
                             </button>
 
                             <div className="flex items-center gap-2">
-                                <input type="checkbox" id="agree" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded focus:ring-black" />
+                                <input type="checkbox" id="agree" className="w-4 h-4 accent-white bg-white border border-black rounded focus:ring-0"/>
                                 <label htmlFor="agree" className="text-[#222122]  font-roboto text-sm font-medium">
                                     I agree to the Terms of Use and Privacy Policy
                                 </label>

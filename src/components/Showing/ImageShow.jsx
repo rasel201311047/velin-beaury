@@ -29,9 +29,9 @@ export default function ImageShow() {
 
             {/* Right Column */}
             <div className="flex flex-col gap-2 w-[30%]">
-                <Image src={Images.option20} alt="image" className="w-full h-1/3 object-cover rounded-lg" />
-                <Image src={Images.option21} alt="image" className="w-full h-1/3 object-cover rounded-lg" />
-                <Image src={Images.option22} alt="image" className="w-full h-1/3 object-cover rounded-lg" />
+                <Image src={Images.option20} alt="image" className="w-full h-[31%]  sm:h-[33%] object-cover rounded-lg" />
+                <Image src={Images.option21} alt="image" className="w-full h-[31%]  sm:h-[33%] object-cover rounded-lg" />
+                <Image src={Images.option22} alt="image" className="w-full h-[31%]  sm:h-[33%] object-cover rounded-lg" />
             </div>
         </div>
     );

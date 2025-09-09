@@ -69,26 +69,26 @@ export default function Footer() {
 
                         <div className=' ml-5 md:ml-0 flex md:flex-row flex-col items-start w-[80%] md:justify-between  gap-8 md:gap-0'>
                             <div>
-                                <h2 className='font-playfair text-xl text-white font-semibold mb-4'>Explore</h2>
+                                <h2 className='font-playfair text-base sm:text-lg md:text-xl text-white font-semibold mb-4'>Explore</h2>
                                 <ul>
-                                    <li className='font-manrope font-normal mb-1 text-base text-white'>Home</li>
-                                    <li className='font-manrope font-normal mb-1 text-base text-white'>About Us</li>
-                                    <li className='font-manrope font-normal mb-1 text-base text-white'>Services</li>
-                                    <li className='font-manrope font-normal text-base text-white'>Contact Us</li>
+                                    <li className='font-manrope font-normal mb-1  text-xs sm:text-sm md:text-base text-white'>Home</li>
+                                    <li className='font-manrope font-normal mb-1  text-xs sm:text-sm md:text-base text-white'>About Us</li>
+                                    <li className='font-manrope font-normal mb-1  text-xs sm:text-sm md:text-base text-white'>Services</li>
+                                    <li className='font-manrope font-normal  text-xs sm:text-sm md:text-base text-white'>Contact Us</li>
                                 </ul>
                             </div>
                             <div>
-                                <h2 className='font-playfair text-xl text-white font-semibold mb-4'>Utility Pages</h2>
+                                <h2 className='font-playfair text-base sm:text-lg md:text-xl text-white font-semibold mb-4'>Utility Pages</h2>
                                 <ul>
-                                    <li className='font-manrope font-normal mb-1 text-base text-white'>Privacy Policy </li>
-                                    <li className='font-manrope font-normal text-base text-white'>Terms of Use</li>
+                                    <li className='font-manrope font-normal mb-1  text-xs sm:text-sm md:text-base text-white'>Privacy Policy </li>
+                                    <li className='font-manrope font-normal  text-xs sm:text-sm md:text-base text-white'>Terms of Use</li>
                                 </ul>
                             </div>
                             <div className=''>
-                                <h2 className='font-playfair text-xl text-white font-semibold mb-4'>Contact Us</h2>
+                                <h2 className='font-playfair text-base sm:text-lg md:text-xl text-white font-semibold mb-4'>Contact Us</h2>
                                 <ul>
-                                    <li className='font-manrope font-normal mb-6 text-base text-white'><span className='font-manrope font-medium text-base text-white'>Address :</span> weinbergstrasse 14 ,6300 Zug </li>
-                                    <li className='font-manrope font-normal mb-1 text-base text-white'><span className='font-manrope font-medium text-base text-white'>Mail :</span>Velusyservice@gmail.com </li>
+                                    <li className='font-manrope font-normal mb-6 text-xs sm:text-sm md:text-base text-white'><span className='font-manrope font-medium text-xs sm:text-sm md:text-base text-white'>Address :</span> weinbergstrasse 14 ,6300 Zug </li>
+                                    <li className='font-manrope font-normal mb-1 text-xs sm:text-sm md:text-base text-white'><span className='font-manrope font-medium text-xs sm:text-sm md:text-base text-white'>Mail :</span>Velusyservice@gmail.com </li>
                                 </ul>
 
                             </div>
@@ -99,7 +99,7 @@ export default function Footer() {
             </div>
 
             <div className='py-2 bg-[#FFFFFF] '>
-                <p className='font-poppins text-center text-sm text-black'>&copy;  Copyright 2025, Velusy.miriam | All rights reserved.</p>
+                <p className='font-poppins text-center text-xs md:text-sm text-black'>&copy;  Copyright 2025, Velusy.miriam | All rights reserved.</p>
 
             </div>
         </div>

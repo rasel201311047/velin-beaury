@@ -25,15 +25,15 @@ export default function ContractUs() {
   return (
     <div className="bg-gradient-to-br from-[#FDFCFB] to-[#F7F3EA] py-8 w-full px-4">
       <div className="container mx-auto py-4">
-        <h2 className="text-center font-playfair font-bold text-2xl py-3 text-[#222122]">
+        <h2 className="text-center font-playfair font-bold text-base sm:text-lg md:text-xl lg:text-2xl py-3 text-[#222122]">
           The platform you were looking for!
         </h2>
-        <p className="text-[#222122] font-manrope font text-center md:w-1/3 md:mx-auto mb-6 text-base">
+        <p className="text-[#222122] font-manrope font text-center md:w-1/3 md:mx-auto mb-6 text-xs sm:text-sm md:text-base">
           Have any questions, doubts, or curiosities? Write to us. We’ll get back
           to you as soon as possible.
         </p>
 
-        <form onSubmit={handleSubmit} className="bg-white p-10 rounded-2xl shadow-md w-11/12 md:w-8/12 mx-auto mx-2 space-y-4"  >
+        <form onSubmit={handleSubmit} className="bg-white p-4 sm:p-6 md:p-10 rounded-2xl shadow-md w-11/12 md:w-8/12 mx-auto mx-2 space-y-4"  >
           {/* Name */}
           <div className="flex items-center border rounded-md px-3 py-4">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,7 +96,7 @@ export default function ContractUs() {
           </div>
 
           {/* Submit */}
-          <button  type="submit" className="w-full bg-black text-white py-4 rounded-md hover:bg-gray-800 transition" >
+          <button  type="submit" className=" text-sm md:text-base w-full bg-black text-white py-4 rounded-md hover:bg-gray-800 transition" >
             SUBMIT
           </button>
         </form>
