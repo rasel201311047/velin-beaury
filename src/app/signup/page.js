@@ -36,13 +36,13 @@ export default function Page({ searchParams }) {
     console.log("type =", type);
 
     const profession = [
-        { title: 'Nails' },
-        { title: 'Massage' },
-        { title: 'Eyelashes' },
-        { title: 'Barber' },
-        { title: 'Face & Body' },
-        { title: 'Make Up' },
-        { title: 'Hair Style' },
+  { title: 'Nails specialist' }, 
+  { title: 'Massage specialist' }, 
+  { title: 'Eyelashes specialist' }, 
+  { title: 'Barber specialist' }, 
+  { title: 'Face & Body specialist' }, 
+  { title: 'Make Up specialist' }, 
+  { title: 'Hair Style specialist' },
     ];
     const handleProDropdown = () => {
         setIsProDropdownOpen(!isProDropdownOpen);
