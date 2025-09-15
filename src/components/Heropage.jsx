@@ -16,7 +16,7 @@ export default function Heropage() {
       </div>
 
       {/* Content section */}
-      <div className="bg-gradient-to-br from-[#FDFCFB] to-[#F3EFE7] w-full pt-5 pb-14">
+      <div className="bg-gradient-to-br from-[#FDFCFB] to-[#F7F3EA] w-full pt-5 pb-14">
         <div className="container mx-auto px-4">
           <h2 className='text-center font-playfair font-bold text-[#040404] text-lg sm:text-xl md:text-4xl my-6'>
             Velusy was created to value every moment you give yourself.
