@@ -125,7 +125,7 @@ export default function OurServices() {
                     </button>
                 )}
 
-                <div ref={servicesRef}  className="flex flex-wrap justify-center md:justify-normal md:flex-nowrap gap-4 overflow-x-auto scroll-smooth scrollbar-hide pb-4"   style={{ scrollBehavior: 'smooth' }} >
+                <div ref={servicesRef}  className="flex  gap-4 overflow-x-auto scroll-smooth scrollbar-hide pb-4"   style={{ scrollBehavior: 'smooth' }} >
                     {servicesData.map((service, index) => (
                         <div key={index} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-52">
                             <ServiceCart item={service} />
@@ -156,7 +156,7 @@ export default function OurServices() {
                     </button>
                 )}
 
-                <div ref={expertsRef}   className="flex gap-4 flex-wrap justify-center md:justify-normal md:flex-nowrap  overflow-x-auto scroll-smooth scrollbar-hide pb-4"   style={{ scrollBehavior: 'smooth' }}  >
+                <div ref={expertsRef}   className="flex gap-4   overflow-x-auto scroll-smooth scrollbar-hide pb-4"   style={{ scrollBehavior: 'smooth' }}  >
                     {Expert.map((service, index) => (
                         <div key={index} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-52">
                             <ServiceCart item={service} />
