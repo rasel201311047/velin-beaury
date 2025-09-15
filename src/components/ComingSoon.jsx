@@ -16,7 +16,7 @@ export default function ComingSoon({sign}) {
                     <div className=''>
                         <p className=' mx-0 text-center font-poppins font-medium text-xs sm:text-sm md:text-base mb-4 text-[#000000] pb-3 border-b border-[#000000]'>Pre-register now by clicking here</p>
 
-                        <div className='mx-auto mb-2'><BackButton /></div>
+                        <div className='mb-2 w-full  mx-auto '><div className='mx-auto w-fit'><BackButton /></div></div>
                         <p className='mx-auto text-center font-poppins font-normal text-[#1B1B25] text-xs sm:text-sm md:text-base'>I want to show my talent</p>
                     </div>
 
@@ -26,7 +26,7 @@ export default function ComingSoon({sign}) {
                     <div className=''>
                         <p className=' mx-0 text-center font-poppins font-medium text-xs sm:text-sm md:text-base  mb-4 text-[#000000] pb-3 border-b border-[#000000]'>Pre-register now by clicking here</p>
 
-                        <div className='mx-auto mb-2'> <GestButton /></div>
+                        <div className='mx-auto mb-2'><div className='mx-auto w-fit'> <GestButton /></div></div>
                         <p className='mx-auto text-center font-poppins font-normal text-[#1B1B25] text-xs sm:text-sm md:text-base'>I want to try your services</p>
                     </div>
 
