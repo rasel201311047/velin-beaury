@@ -116,7 +116,7 @@ export default function OurServices() {
             <h6 className='text-center mb-6 font-manrope text-xs sm:text-sm md:text-base text-[#2C2C2A]'>OUR SERVICES</h6>
 
             {/* Services Horizontal Scroll */}
-            <div className="relative max-w-7xl mx-auto mb-12">
+            <div className="relative max-w-7xl mx-auto mb-12 ">
                 {servicesScroll.showLeftArrow && (
                     <button  onClick={() => handleScroll('left', servicesRef, setServicesScroll)}   className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#ffffff8c] rounded-full p-2 shadow-md hover:bg-gray-100 transition-all duration-200 hidden md:block"   aria-label="Scroll left"  >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -125,7 +125,7 @@ export default function OurServices() {
                     </button>
                 )}
 
-                <div ref={servicesRef}  className="flex gap-4 overflow-x-auto scroll-smooth scrollbar-hide pb-4"   style={{ scrollBehavior: 'smooth' }} >
+                <div ref={servicesRef}  className="flex flex-wrap justify-center md:justify-normal md:flex-nowrap gap-4 overflow-x-auto scroll-smooth scrollbar-hide pb-4"   style={{ scrollBehavior: 'smooth' }} >
                     {servicesData.map((service, index) => (
                         <div key={index} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-52">
                             <ServiceCart item={service} />
@@ -147,7 +147,7 @@ export default function OurServices() {
             <h6 className='text-center mb-6 font-manrope text-xs sm:text-sm md:text-base text-[#2C2C2A] uppercase'>Our Expert Professional</h6>
 
             {/* Experts Horizontal Scroll */}
-            <div className="relative max-w-7xl mx-auto mb-12">
+            <div className="relative max-w-7xl mx-auto mb-6">
                 {expertsScroll.showLeftArrow && (
                     <button onClick={() => handleScroll('left', expertsRef, setExpertsScroll)}   className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#ffffff8c] rounded-full p-2 shadow-md hover:bg-gray-100 transition-all duration-200 hidden md:block"  aria-label="Scroll left"  >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -156,7 +156,7 @@ export default function OurServices() {
                     </button>
                 )}
 
-                <div ref={expertsRef}   className="flex gap-4 overflow-x-auto scroll-smooth scrollbar-hide pb-4"   style={{ scrollBehavior: 'smooth' }}  >
+                <div ref={expertsRef}   className="flex gap-4 flex-wrap justify-center md:justify-normal md:flex-nowrap  overflow-x-auto scroll-smooth scrollbar-hide pb-4"   style={{ scrollBehavior: 'smooth' }}  >
                     {Expert.map((service, index) => (
                         <div key={index} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-52">
                             <ServiceCart item={service} />
